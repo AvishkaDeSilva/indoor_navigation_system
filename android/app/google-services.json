@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "286149836664",
+    "project_id": "indoor-navigation-system-e4162",
+    "storage_bucket": "indoor-navigation-system-e4162.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286149836664:android:6bd3b56d99333dbf1e928d",
+        "android_client_info": {
+          "package_name": "com.example.indoor_navigation_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286149836664-b9oc16m58tdle0nb11pn5iei7t9tbi0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNIrw-8vD9edbQQ_fLR2NE3JtI5SNOrDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286149836664-b9oc16m58tdle0nb11pn5iei7t9tbi0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
