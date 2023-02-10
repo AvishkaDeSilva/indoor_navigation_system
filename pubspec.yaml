@@ -38,7 +38,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   responsive_framework: ^0.2.0
   delayed_display: ^2.0.0
-  flutter_login: ^4.1.1
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
+  firebase_core: ^2.5.0
+  cloud_firestore: ^4.3.2
 
 dev_dependencies:
   flutter_test:

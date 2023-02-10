@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:indoor_navigation_system/presentation_layer/screens/Main%20Screen.dart';
 
 import '../utilities/styles.dart';
+import 'login_screen.dart';
 
 class InitialScreen extends StatefulWidget {
   static const String id = 'initial_screen';
@@ -42,7 +42,7 @@ class _InitialScreenState extends State<InitialScreen>
   delayScreen() {
     var duration = const Duration(seconds: 7);
     _timer = Timer(
-        duration, () => Navigator.pushReplacementNamed(context, MainScreen.id));
+        duration, () => Navigator.pushReplacementNamed(context, LoginScreen.id));
     return _timer;
   }
 
@@ -58,7 +58,7 @@ class _InitialScreenState extends State<InitialScreen>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushReplacementNamed(context, MainScreen.id),
+      onTap: () => Navigator.pushReplacementNamed(context, LoginScreen.id),
       child: Scaffold(
         backgroundColor: initialScreenBC,
         body: Padding(
