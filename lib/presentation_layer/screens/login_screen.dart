@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:indoor_navigation_system/logic_layer/blocs/map_bloc.dart';
 import 'package:indoor_navigation_system/logic_layer/cubits/login_cubit.dart';
+import 'package:indoor_navigation_system/logic_layer/events/map_event.dart';
 import 'package:indoor_navigation_system/logic_layer/states/login_state.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/main_screen.dart';
 import 'package:indoor_navigation_system/presentation_layer/utilities/styles.dart';
@@ -59,8 +61,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 if (state is LoginLoadingState) {
                   return const Center(child: CircularProgressIndicator());
                 } else if (state is LoginSuccessState) {
-                  WidgetsBinding.instance.addPostFrameCallback((_) {//used to return circular progress indicator until the frame build
-                    Navigator.pushReplacementNamed(context, MainScreen.id);});
+                  final bloc = context.read<MapBloc>();
+                  bloc.add(LoadMapEvent(imagePath: "assets/images/map.jpg"));
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    //used to return circular progress indicator until the frame build
+                    Navigator.pushReplacementNamed(context, MainScreen.id);
+                  });
                   return const Center(child: CircularProgressIndicator());
                 } else {
                   return Column(

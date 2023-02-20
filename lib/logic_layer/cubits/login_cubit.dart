@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:indoor_navigation_system/data_layer/models/user.dart';
+import 'package:indoor_navigation_system/data_layer/repositories/user_repository.dart';
 
-import '../../data_layer/models/user.dart';
-import '../../data_layer/repositories/user_repositiory.dart';
+
 import '../states/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState>{
