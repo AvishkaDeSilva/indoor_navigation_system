@@ -1,14 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:indoor_navigation_system/data_layer/models/map.dart';
+import 'package:indoor_navigation_system/data_layer/repositories/user_repository.dart';
 import 'package:indoor_navigation_system/logic_layer/cubits/login_cubit.dart';
+import 'package:indoor_navigation_system/logic_layer/blocs/map_bloc.dart';
+import 'package:indoor_navigation_system/logic_layer/single_bloc_observer.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/initial%20_screen.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/login_screen.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/main_screen.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 
-import 'data_layer/repositories/user_repositiory.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,8 +24,12 @@ class NavMe extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Bloc.observer = SimpleBlocObserver();
     return MultiBlocProvider(
-      providers: [BlocProvider<LoginCubit>(create: (context) => LoginCubit(databaseRepository: DatabaseRepository()))],
+      providers: [
+        BlocProvider<LoginCubit>(create: (context) => LoginCubit(databaseRepository: DatabaseRepository())),
+        BlocProvider<MapBloc>(create: (context) => MapBloc(graph: Graph()))
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         builder: (context, widget) => ResponsiveWrapper.builder(
