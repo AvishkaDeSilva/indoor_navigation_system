@@ -4,7 +4,9 @@ import 'package:indoor_navigation_system/logic_layer/blocs/map_bloc.dart';
 import 'package:indoor_navigation_system/logic_layer/cubits/login_cubit.dart';
 import 'package:indoor_navigation_system/logic_layer/events/map_event.dart';
 import 'package:indoor_navigation_system/logic_layer/states/login_state.dart';
+import 'package:indoor_navigation_system/presentation_layer/pages/test.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/main_screen.dart';
+import 'package:indoor_navigation_system/presentation_layer/screens/selection_screen.dart';
 import 'package:indoor_navigation_system/presentation_layer/utilities/styles.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -65,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   bloc.add(LoadMapEvent(imagePath: "assets/images/map.jpg"));
                   WidgetsBinding.instance.addPostFrameCallback((_) {
                     //used to return circular progress indicator until the frame build
-                    Navigator.pushReplacementNamed(context, MainScreen.id);
+                    Navigator.pushReplacementNamed(context, SelectionScreen.id);
                   });
                   return const Center(child: CircularProgressIndicator());
                 } else {

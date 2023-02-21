@@ -44,6 +44,9 @@ dependencies:
   cloud_firestore: ^4.3.2
   flutter_beacon: ^0.5.1
   beacons_plugin: ^2.0.8
+  geolocator: ^9.0.2
+  flutter_blue: ^0.8.0
+  wifi_iot: ^0.3.18
 
 dev_dependencies:
   flutter_test:

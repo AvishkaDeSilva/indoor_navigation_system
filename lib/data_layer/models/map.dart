@@ -1,12 +1,29 @@
 import 'package:collection/collection.dart';
 class Map{
-  final double locationX;
-  final double locationY;
+  final Location location;
   final String username;
 
-  Map({required this.locationX, required this.locationY, required this.username});
+  Map({required this.location,required this.username});
 
 }
+
+class Beacon {
+  late int x;
+  late int y;
+  late int distance;
+  final int rssi;
+
+  Beacon({required this.rssi});
+}
+
+class Location {
+  final double x;
+  final double y;
+
+  Location({required this.x, required this.y});
+}
+
+
 
 class Graph {
   int numVertices = 13;

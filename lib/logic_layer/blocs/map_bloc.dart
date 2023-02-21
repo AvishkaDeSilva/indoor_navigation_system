@@ -18,10 +18,10 @@ class MapBloc extends Bloc<MapEvent,MapState>{
         image = await decodeImageFromList(bytes);
         emit(LoadedMapState(image: image));
       }
-      else if(event is GetDestinationLocationEvent){
-        emit(LoadingNavigationState(image: image));
+      else if(event is ShowDestinationPathLocationEvent){
+        emit(LoadingNavigationState(image: image, location: Location(x: 2,y: 3)));
         await Future.delayed(const Duration(seconds: 1));
-        var paths = graph.shortestPath(0,event.value);
+        var paths = graph.shortestPath(event.start,event.end);
         emit(LoadedNavigationState(image: image,navigatePath: paths));
       }
     });
