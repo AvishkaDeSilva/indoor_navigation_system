@@ -6,9 +6,11 @@ import 'package:indoor_navigation_system/data_layer/repositories/user_repository
 import 'package:indoor_navigation_system/logic_layer/cubits/login_cubit.dart';
 import 'package:indoor_navigation_system/logic_layer/blocs/map_bloc.dart';
 import 'package:indoor_navigation_system/logic_layer/single_bloc_observer.dart';
+import 'package:indoor_navigation_system/presentation_layer/pages/test.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/initial%20_screen.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/login_screen.dart';
 import 'package:indoor_navigation_system/presentation_layer/screens/main_screen.dart';
+import 'package:indoor_navigation_system/presentation_layer/screens/selection_screen.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 
@@ -40,9 +42,6 @@ class NavMe extends StatelessWidget {
           breakpoints: [
             const ResponsiveBreakpoint.resize(450, name: MOBILE),
             const ResponsiveBreakpoint.autoScale(800, name: TABLET),
-            const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
-            const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-            const ResponsiveBreakpoint.autoScale(2460, name: "4K"),
           ],
         ),
         initialRoute: InitialScreen.id,
@@ -50,6 +49,8 @@ class NavMe extends StatelessWidget {
           InitialScreen.id: (context) => const InitialScreen(),
           LoginScreen.id: (context) => const LoginScreen(),
           MainScreen.id: (context) => const MainScreen(),
+          SelectionScreen.id: (context) => const SelectionScreen(),
+          Test.id:(context) => Test(),
         },
       ),
     );

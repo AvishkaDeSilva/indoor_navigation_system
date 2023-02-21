@@ -8,10 +8,14 @@ class LoadMapEvent extends MapEvent{
 
 }
 
-class GetCurrentLocationEvent extends MapEvent{}
+class StartNavigationEvent extends MapEvent{
+  final int end;
+  StartNavigationEvent({required this.end});
+}
 
-class GetDestinationLocationEvent extends MapEvent{
-  final int value;
-  GetDestinationLocationEvent({required this.value});
+class ShowDestinationPathLocationEvent extends MapEvent{
+  final int start;
+  final int end;
+  ShowDestinationPathLocationEvent({required this.start,required this.end});
 }
 
